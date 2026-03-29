@@ -254,22 +254,72 @@
       border-color: var(--accent);
     }
 
-    /* Featured DJ (Tara - spans 2 cols on desktop) */
-    .dj-card.featured {
-      grid-column: span 2;
+    /* ── HEADLINER (Tara) ── */
+    .headliner {
+      border: 1px solid var(--border);
+      margin-bottom: 1px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 340px;
     }
 
-    @media (max-width: 500px) {
-      .dj-card.featured { grid-column: span 1; }
+    @media (max-width: 600px) {
+      .headliner { grid-template-columns: 1fr; }
     }
 
-    .dj-card.featured .dj-photo {
-      aspect-ratio: 2/1;
+    .headliner-photo {
+      background: #111;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .headliner-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+
+    .headliner-photo-placeholder {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: #2a2a2a;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .headliner-info {
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--card);
+    }
+
+    .headliner-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.4em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .headliner-name {
+      font-family: var(--mono);
+      font-size: clamp(36px, 7vw, 80px);
+      font-weight: 700;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      color: var(--white);
     }
 
     .sc-embed {
       width: 100%;
-      margin-top: 8px;
+      margin-top: 24px;
     }
 
     .sc-placeholder {
@@ -281,6 +331,7 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
       text-align: center;
+      margin-top: 24px;
     }
 
     /* ── RSVP FORM ── */
@@ -547,7 +598,7 @@
       </div>
       <div class="hero-detail">
         <div class="detail-label">Venue</div>
-        <div class="detail-value">The Shoreditch<br/>Shoreditch, London</div>
+        <div class="detail-value">The Shoreditch<br/>145 Shoreditch High St<br/>London E1 6JE</div>
       </div>
       <div class="hero-detail">
         <div class="detail-label">Doors</div>
@@ -565,67 +616,58 @@
       <h2 class="section-title">Lineup</h2>
     </div>
 
+    <!-- Tara Erizo — Headliner -->
+    <div class="headliner">
+      <div class="headliner-photo">
+        <!-- Replace with actual photo: <img src="photos/tara.jpg" alt="Tara Erizo"> -->
+        <div class="headliner-photo-placeholder">Photo<br/>coming soon</div>
+      </div>
+      <div class="headliner-info">
+        <div>
+          <div class="headliner-tag">Headliner</div>
+          <div class="headliner-name">Tara<br/>Erizo</div>
+        </div>
+        <!-- SoundCloud embed — replace URL with actual track when ready -->
+        <div class="sc-placeholder">SoundCloud — coming soon</div>
+        <!--
+        <iframe class="sc-embed"
+          scrolling="no" frameborder="no" allow="autoplay"
+          src="https://w.soundcloud.com/player/?url=SOUNDCLOUD_TRACK_URL&color=%23ff2d2d&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+          height="80">
+        </iframe>
+        -->
+      </div>
+    </div>
+
+    <!-- Supporting DJs -->
     <div class="lineup-grid">
 
-      <!-- Tara Erizo — featured -->
-      <div class="dj-card featured">
-        <div class="dj-photo">
-          <!-- Replace src with actual photo when ready -->
-          <!-- <img src="photos/tara.jpg" alt="Tara Erizo"> -->
-          <div class="dj-photo-placeholder">Photo<br/>coming soon</div>
-        </div>
-        <div class="dj-info">
-          <div class="dj-name">Tara Erizo</div>
-          <div class="dj-links">
-            <!-- Replace href with actual Instagram URL -->
-            <a class="dj-link" href="INSTAGRAM_URL_HERE" target="_blank" rel="noopener">Instagram ↗</a>
-          </div>
-          <iframe class="sc-embed"
-            scrolling="no" frameborder="no" allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/platform/tara-erizo&color=%23ff2d2d&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
-            height="80">
-          </iframe>
-        </div>
-      </div>
-
-      <!-- Nik -->
       <div class="dj-card">
         <div class="dj-photo">
           <div class="dj-photo-placeholder">Photo<br/>coming soon</div>
         </div>
-        <div class="dj-info">
-          <div class="dj-name">Nik</div>
-        </div>
+        <div class="dj-info"><div class="dj-name">Nik</div></div>
       </div>
 
-      <!-- Dario -->
       <div class="dj-card">
         <div class="dj-photo">
           <div class="dj-photo-placeholder">Photo<br/>coming soon</div>
         </div>
-        <div class="dj-info">
-          <div class="dj-name">Dario</div>
-        </div>
+        <div class="dj-info"><div class="dj-name">Dario</div></div>
       </div>
 
-      <!-- Austin -->
       <div class="dj-card">
         <div class="dj-photo">
           <div class="dj-photo-placeholder">Photo<br/>coming soon</div>
         </div>
-        <div class="dj-info">
-          <div class="dj-name">Austin</div>
-        </div>
+        <div class="dj-info"><div class="dj-name">Austin</div></div>
       </div>
 
-      <!-- Fillipo -->
       <div class="dj-card">
         <div class="dj-photo">
           <div class="dj-photo-placeholder">Photo<br/>coming soon</div>
         </div>
-        <div class="dj-info">
-          <div class="dj-name">Fillipo</div>
-        </div>
+        <div class="dj-info"><div class="dj-name">Fillipo</div></div>
       </div>
 
     </div>
@@ -686,16 +728,28 @@
 
           <!-- WOMEN slides -->
           <div class="swiper-slide" id="slide-women">
-            <div class="outfit-item"><div class="outfit-placeholder">Outfit<br/>photo 1</div></div>
-            <div class="outfit-item"><div class="outfit-placeholder">Outfit<br/>photo 2</div></div>
-            <div class="outfit-item"><div class="outfit-placeholder">Outfit<br/>photo 3</div></div>
+            <div class="outfit-item">
+              <img src="https://images.pexels.com/photos/5616748/pexels-photo-5616748.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop" alt="Black outfit inspiration" loading="lazy">
+            </div>
+            <div class="outfit-item">
+              <img src="https://images.pexels.com/photos/17433078/pexels-photo-17433078.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop" alt="Black outfit inspiration" loading="lazy">
+            </div>
+            <div class="outfit-item">
+              <img src="https://images.pexels.com/photos/3601498/pexels-photo-3601498.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop" alt="Black outfit inspiration" loading="lazy">
+            </div>
           </div>
 
           <!-- MEN slides -->
           <div class="swiper-slide" id="slide-men">
-            <div class="outfit-item"><div class="outfit-placeholder">Outfit<br/>photo 1</div></div>
-            <div class="outfit-item"><div class="outfit-placeholder">Outfit<br/>photo 2</div></div>
-            <div class="outfit-item"><div class="outfit-placeholder">Outfit<br/>photo 3</div></div>
+            <div class="outfit-item">
+              <img src="https://images.pexels.com/photos/19168186/pexels-photo-19168186.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop" alt="Black outfit inspiration" loading="lazy">
+            </div>
+            <div class="outfit-item">
+              <img src="https://images.pexels.com/photos/19179683/pexels-photo-19179683.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop" alt="Black outfit inspiration" loading="lazy">
+            </div>
+            <div class="outfit-item">
+              <img src="https://images.pexels.com/photos/2973552/pexels-photo-2973552.jpeg?auto=compress&cs=tinysrgb&w=400&h=600&fit=crop" alt="Black outfit inspiration" loading="lazy">
+            </div>
           </div>
 
         </div>
@@ -705,7 +759,7 @@
 
   <!-- ── FOOTER ── -->
   <footer>
-    <div class="footer-title">25.04.2026 &nbsp;—&nbsp; The Shoreditch &nbsp;—&nbsp; London</div>
+    <div class="footer-title">25.04.2026 &nbsp;—&nbsp; The Shoreditch &nbsp;—&nbsp; 145 Shoreditch High St, London E1 6JE</div>
   </footer>
 
   <script>
