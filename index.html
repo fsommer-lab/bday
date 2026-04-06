@@ -584,7 +584,7 @@
 
   <nav>
     <a href="#lineup">Lineup</a>
-    <a href="#rsvp">RSVP</a>
+
     <a href="#dresscode">Dresscode</a>
   </nav>
 
@@ -672,39 +672,6 @@
     </div>
   </section>
 
-  <!-- ── RSVP ── -->
-  <section id="rsvp">
-    <div class="section-header">
-      <span class="section-num">02 /</span>
-      <h2 class="section-title">RSVP</h2>
-    </div>
-
-    <div class="form-wrap">
-      <form id="rsvp-form">
-        <div class="form-row">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" name="name" placeholder="First & Last name" required />
-        </div>
-        <div class="form-row">
-          <label for="guests">Additional Guests</label>
-          <select id="guests" name="guests" required>
-            <option value="" disabled selected>How many people are you bringing?</option>
-            <option value="0">Just me</option>
-            <option value="1">+ 1</option>
-            <option value="2">+ 2</option>
-            <option value="3">+ 3</option>
-            <option value="4">+ 4</option>
-            <option value="5">+ 5</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-submit">Confirm attendance</button>
-      </form>
-      <div class="form-success" id="form-success">
-        ✓ &nbsp;You're on the list. See you on the dancefloor.
-      </div>
-    </div>
-  </section>
-
   <!-- ── DRESS CODE ── -->
   <section id="dresscode">
     <div class="section-header">
@@ -713,7 +680,6 @@
     </div>
 
     <div class="dresscode-intro">All<br/><span>Black.</span></div>
-    <div class="dresscode-note">No exceptions. Dress the part.</div>
 
     <!-- Gender toggle + swiper -->
     <div class="swiper-wrap">
@@ -762,13 +728,6 @@
   </footer>
 
   <script>
-    // ── RSVP FORM ──
-    document.getElementById('rsvp-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      this.style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
-    });
-
     // ── DRESS CODE GENDER TOGGLE ──
     let currentGender = 'women';
 
